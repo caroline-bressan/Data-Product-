@@ -1,0 +1,40 @@
+---
+title: "Data Product project"
+output: html_document
+date: "2023-05-31"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Project description
+
+Host your webpage on either GitHub Pages, RPubs, or NeoCities.
+
+Your webpage must contain the date that you created the document, and it must contain a map created with Leaflet. We would love to see you show off your creativity!
+
+## Introduction
+
+In this project will be shown the bests beaches to surf in my city - Florianópolis - Brazil. 
+This city is an island with 45 beaches. 
+
+## Libraries
+
+```{r}
+library(leaflet)
+library(dplyr)
+```
+
+## Adding the best beaches to surf - Morro das Pedras, Matadeiro, Praia Mole, Joaquina e Moçambique
+
+```{r}
+df <- leaflet(width = "100%") %>% addTiles() %>%
+  addMarkers(lat = -27,722421, lng = -48.504293, popup = "Morro das Pedras") %>%
+  addMarkers(lat = -27.753168, lng = -48.499642, popup = "Matadeiro") %>%
+  addMarkers(lat = -27.628128, lng = -48.447781, popup = "Joaquina") %>%
+  addMarkers(lat = -27.546695, lng = -48.427334, popup = "Moçambique") %>%
+  addMarkers(lat = -27.602548, lng = -48.433664, popup = "Praia Mole")
+(df)
+```
+
